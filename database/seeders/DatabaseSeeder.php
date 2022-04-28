@@ -14,11 +14,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call([
-        //     PreparationSeeder::class,
-        //     MeasurementSeeder::class,
-        //     NutrientSeeder::class,
-        //     FoodSeeder::class,
-        // ]);
+        $this->call([
+            PreparationSeeder::class,
+            // MeasurementSeeder::class,
+            // NutrientSeeder::class,
+            // FoodSeeder::class,
+        ]);
     }
 }

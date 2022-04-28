@@ -14,10 +14,6 @@ use App\Http\Controllers\MealController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('users/{id}', function ($id) {
-    return 'Usuário $id' ;
-
-});
 
 Route::controller(FoodController::class)->group(function () {
     Route::get('/foods','index');//Fetches details for multiple food items using input IDs

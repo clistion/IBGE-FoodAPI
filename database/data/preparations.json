@@ -1,0 +1,66 @@
+[
+    {
+        "code": "1",
+        "name": "Cru(a)"
+    },
+    {
+        "code": "2",
+        "name": "Cozido(a)"
+    },
+    {
+        "code": "3",
+        "name": "Grelhado(a)/Brasa/Churrasco"
+    },
+    {
+        "code": "4",
+        "name": "Assado(a)"
+    },
+    {
+        "code": "5",
+        "name": "Frito(a)"
+    },
+    {
+        "code": "6",
+        "name": "Empanado(a)/A milanesa"
+    },
+    {
+        "code": "7",
+        "name": "Refogado(a)"
+    },
+    {
+        "code": "8",
+        "name": "Molho vermelho"
+    },
+    {
+        "code": "9",
+        "name": "Molho branco"
+    },
+    {
+        "code": "10",
+        "name": "Ao alho e óleo"
+    },
+    {
+        "code": "11",
+        "name": "Com manteiga/Óleo"
+    },
+    {
+        "code": "12",
+        "name": "Ao vinagrete"
+    },
+    {
+        "code": "13",
+        "name": "Ensopado"
+    },
+    {
+        "code": "14",
+        "name": "Mingau"
+    },
+    {
+        "code": "15",
+        "name": "Sopa"
+    },
+    {
+        "code": "99",
+        "name": "Não se aplica"
+    }
+]
