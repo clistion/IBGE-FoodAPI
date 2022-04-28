@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Measurement extends Model
 {
     use HasFactory;
+    protected $table ="measurements";
 
     /**
      * Get the user that owns the Measurement

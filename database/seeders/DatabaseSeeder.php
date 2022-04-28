@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PreparationSeeder::class,
-            // MeasurementSeeder::class,
+            MeasurementSeeder::class,
             // NutrientSeeder::class,
-            // FoodSeeder::class,
+            FoodSeeder::class,
         ]);
     }
 }

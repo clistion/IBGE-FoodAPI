@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\Measurement;
+use File;
+
 class MeasurementSeeder extends Seeder
 {
     /**
@@ -13,11 +16,18 @@ class MeasurementSeeder extends Seeder
      * @return void
      */
     public function run()
+
     {
-        DB::table('measurement')->insert([
-            'name' => Str::random(10),
-            'email' => Str::random(10).'@gmail.com',
-            'password' => Hash::make('password'),
-        ]);
+        // Measurement::truncate();
+
+        $json = File::get("database/data/measurements.json");
+        $measurements = json_decode($json);
+
+        foreach ($measurements as $key => $value) {
+            Measurement::create([
+                "code" => $value->code,
+                "name" => $value->name
+            ]);
+        }
     }
 }

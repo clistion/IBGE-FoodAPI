@@ -17,14 +17,20 @@ return new class extends Migration
             $table->id();
             $table->integer('code')->unsigned();
             $table->string('description', 100);
-            $table->date('publicationDate');
-            $table->string('ingredients', 255);
-            $table->string('marketCountry', 100);
-            $table->float('servingSize')->unsigned();
-            $table->string('servingSizeUnit', 100);
-
-
+            $table->integer('preparation_code');
             $table->timestamps();
+
+            $table->foreign('preparation_code')->references('code')->on('preparations')->onDelete('NO ACTION')->onUpdate('CASCADE');
+
+
+
+            // $table->date('publicationDate');
+            // $table->string('ingredients', 255);
+            // $table->string('marketCountry', 100);
+            // $table->float('servingSize')->unsigned();
+            // $table->string('servingSizeUnit', 100);
+
+
         });
     }
 
@@ -35,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('food');
+        Schema::dropIfExists('foods');
     }
 };

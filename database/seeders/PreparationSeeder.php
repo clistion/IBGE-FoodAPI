@@ -17,12 +17,12 @@ class PreparationSeeder extends Seeder
      */
     public function run()
     {
-        Preparation::truncate();
+        // Preparation::truncate();
 
         $json = File::get("database/data/preparations.json");
-        $reparations = json_decode($json);
+        $preparations = json_decode($json);
 
-        foreach ($reparations as $key => $value) {
+        foreach ($preparations as $key => $value) {
             Preparation::create([
                 "code" => $value->code,
                 "name" => $value->name

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('preparations', function (Blueprint $table) {
             $table->id();
-            $table->integer('code')->unsigned();
+            $table->integer('code')->unique();
             $table->string('name', 100);
             $table->timestamps();
         });

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('measurements_unit', function (Blueprint $table) {
+        Schema::create('measurements', function (Blueprint $table) {
             $table->id();
             $table->integer('code')->unsigned();
             $table->string('name', 100);
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('measurements_unit');
+        Schema::dropIfExists('measurements');
     }
 };
