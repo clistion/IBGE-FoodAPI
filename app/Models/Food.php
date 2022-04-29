@@ -38,4 +38,14 @@ class Food extends Model
     {
         return $this->hasOne(Preparation::class);
     }
+
+    /**
+     * Get the user associated with the Food
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function category(): HasOne
+    {
+        return $this->hasOne(Category::class);
+    }
 }

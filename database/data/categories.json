@@ -1,0 +1,21 @@
+[
+    {"name":"Cereais e leguminosas"},
+    {"name":"Hortaliças tuberosas"},
+    {"name":"Farinhas, féculas e massas"},
+    {"name":"Cocos, castanhas e nozes"},
+    {"name":"Hortaliças folhosas, frutosas e outras"},
+    {"name":"Frutas"},
+    {"name":"Açúcares e produtos de confeitaria "},
+    {"name":"Sais e condimentos"},
+    {"name":"Carnes e vísceras"},
+    {"name":"Pescados e frutos do mar"},
+    {"name":"Enlatados e conservas"},
+    {"name":"Aves e ovos"},
+    {"name":"Laticínios"},
+    {"name":"Panificados"},
+    {"name":"Carnes industrializadas"},
+    {"name":"Bebidas não alcoólicas e infusões"},
+    {"name":"Bebidas alcoólicas"},
+    {"name":"Óleos e gorduras"},
+    {"name":"Miscelâneas"}
+]

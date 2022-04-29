@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('nutrients', function (Blueprint $table) {
             $table->id();
-            $table->string('nutrient', 100);
-            $table->string('measure', 25);//g,mg, kcal,..
+            $table->string('name', 100);
+            $table->string('simbol', 25);//g,mg, kcal,..
             $table->timestamps();
         });
     }
