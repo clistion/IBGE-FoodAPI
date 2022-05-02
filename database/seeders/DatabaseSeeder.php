@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             NutrientSeeder::class,
             CategorySeeder::class,
             FoodSeeder::class,
+            FoodNutrientSeeder::class,
+
         ]);
     }
 }

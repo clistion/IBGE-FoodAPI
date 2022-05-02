@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Nutrient extends Model
+class FoodNutrient extends Model
 {
     use HasFactory;
 
-
-   /**
-    * The roles that belong to the Nutrient
-    *
-    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-    */
-   public function foods(): BelongsToMany
+    public function nutrients():BelongsToMany
+    {
+        return $this->belongsToMany(Nutrient::class);
+    }
+    public function foods(): BelongsToMany
    {
        return $this->belongsToMany(Food::class);
    }
+
 }

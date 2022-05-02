@@ -22,11 +22,11 @@ class Food extends Model
    /**
     * Get all of the nutrients for the Food
     *
-    * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
     */
-    public function nutrients(): HasMany
+    public function nutrients():BelongsToMany
     {
-        return $this->hasMany(Nutrient::class);
+        return $this->belongsToMany(Nutrient::class);
     }
 
     /**
