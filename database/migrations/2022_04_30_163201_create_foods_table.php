@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('code')->unsigned();
             $table->string('description', 100);
             $table->integer('preparation_code');
+
             // $table->foreignId('category_id');
             // $table->integer('measurement_code');
 

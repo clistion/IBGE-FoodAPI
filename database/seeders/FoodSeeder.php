@@ -8,6 +8,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Food;
 use File;
 
+use App\Models\Category;
+
 class FoodSeeder extends Seeder
 {
     /**
