@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Food;
+use App\Models\Preparation;
+
+use Illuminate\Database\Eloquent\Collection; //remover???
+use Illuminate\Contracts\Support\Jsonable;
 
 class FoodController extends Controller
 {
@@ -11,9 +16,23 @@ class FoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $url_params = $request->all();
+
+        if ($request->isMethod('get') && $request->has('paginate')) {
+            $foods = Food::paginate($url_params['paginate']);
+        }
+        else
+            $foods = Food::all();
+
+        foreach ($foods as $index => $food) {
+            $preparation = Preparation::where('code', $food->preparation_code)->first();
+            $food->setAttribute('preparation_name', $preparation->name);
+        }
+
+        return $foods->toJson(JSON_PRETTY_PRINT);
+
     }
 
     /**
@@ -24,7 +43,7 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    //
     }
 
     /**
@@ -33,9 +52,13 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        //
+        $food = Food::where('code', $code)->firstOrFail();
+        $preparation = Preparation::where('code', $food->preparation_code)->first();
+        $food->setAttribute('preparation_name', $preparation->name);
+        return $food->toJson(JSON_PRETTY_PRINT);
+
     }
 
     /**
@@ -47,7 +70,7 @@ class FoodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+    //
     }
 
     /**
@@ -58,6 +81,6 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        //
+    //
     }
 }
