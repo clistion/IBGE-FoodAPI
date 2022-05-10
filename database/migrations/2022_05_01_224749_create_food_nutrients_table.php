@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('food_nutrients', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('foods_id');
             $table->foreignId('nutrients_id');
             $table->float('amount')->default('0.00');

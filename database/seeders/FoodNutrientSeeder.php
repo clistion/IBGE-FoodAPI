@@ -21,15 +21,21 @@ class FoodNutrientSeeder extends Seeder
         $nutrientsValues = json_decode($json);
 
         foreach ($nutrientsValues as $k => $value) {
+            $k++;
+
             foreach ($value as $j => $v) {
-                // print "$key => $valor\n";
+
                 FoodNutrient::create([
                     "foods_id" => $k,
                     "nutrients_id" => $j,
                     "amount" => $v
                 ]);
+
+            // print_r($k);
+            // print_r($j);
+            // print_r($v);
+
             }
-            $k++;
         }
     }
 }
