@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Nutrient extends Model
 {
     use HasFactory;
+    protected $table ="nutrients";//force use this table name. fix plural probles!
+    protected $visible = ['name', 'simbol','id'];//define which attributes are returned
 
 
    /**
@@ -18,6 +20,6 @@ class Nutrient extends Model
     */
    public function foods(): BelongsToMany
    {
-       return $this->belongsToMany(Food::class);
+       return $this->belongsToMany(Food::class, 'food_nutrient', 'nutrient_id', 'food_id');
    }
 }

@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('food_nutrients', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('foods_id');
-            $table->foreignId('nutrients_id');
+        Schema::create('food_nutrient', function (Blueprint $table) {
+            // $table->id();
+            $table->foreignId('food_id');
+            $table->foreignId('nutrient_id');
             $table->float('amount')->default('0.00');
             $table->timestamps();
 
 
-            $table->foreign('foods_id')->references('id')->on('foods')->onDelete('NO ACTION')->onUpdate('CASCADE');
-            $table->foreign('nutrients_id')->references('id')->on('nutrients')->onDelete('NO ACTION')->onUpdate('CASCADE');
+            $table->foreign('food_id')->references('id')->on('foods')->onDelete('NO ACTION')->onUpdate('CASCADE');
+            $table->foreign('nutrient_id')->references('id')->on('nutrients')->onDelete('NO ACTION')->onUpdate('CASCADE');
 
         });
     }
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('foods_nutrients');
+        Schema::dropIfExists('food_nutrient');
     }
 };
