@@ -12,4 +12,13 @@ API of the 2008-2009 Family Budget Survey: tables of nutritional composition of 
  | /foods?paginate=10 |	GET | Fetches details for all foods. Retrives an paginated JSON
  | /food/{code}| GET | Fetches details for one food item by code
  
+ 
+# 1- Running this project
+ - configure the .env file
+
+# 2 - Execute these commands in powershell / CMD / Terminal:
+ - [composer update](https://getcomposer.org/download/)
+ - [php artisan migrate](https://laravel.com/docs/9.x/migrations#roll-back-migrate-using-a-single-command)
+ - [php artisan db:seed](https://laravel.com/docs/9.x/seeding#main-content)
+ - php artisan serve
 
