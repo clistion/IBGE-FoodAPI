@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class FoodNutrient extends Model
 {
     use HasFactory;
+    protected $table ="food_nutrient";//force use this table name. fix plural probles!
+    protected $visible = ['food_id','nutrient_id','nutrients'];
 
     public function nutrients():BelongsToMany
     {

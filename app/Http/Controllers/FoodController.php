@@ -8,9 +8,28 @@ use App\Models\Preparation;
 
 use Illuminate\Database\Eloquent\Collection; //remover???
 use Illuminate\Contracts\Support\Jsonable;
+use App\Models\FoodNutrient;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Arr;
+use PHPUnit\Framework\MockObject\Stub\ReturnValueMap;
 
 class FoodController extends Controller
 {
+
+
+    public function appendNutrients(Food $food)
+    {
+        $res = DB::table('food_nutrient')->join('nutrients', 'id', '=', 'nutrient_id')->where('food_id', '=', $food->id)->get();
+        $arr = $res->toArray();
+        $q = [];
+        foreach ($arr as $key => $value) {
+            $z = (array)$value; //object to array conversion
+            $z = Arr::except($z, ['id', 'food_id', 'created_at', 'updated_at', 'nutrient_id']); //removes some keys
+            array_push($q, $z);
+        }
+        $food->setAttribute('nutrients', (object)$q);
+        return $food;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,8 +46,12 @@ class FoodController extends Controller
             $foods = Food::all();
 
         foreach ($foods as $index => $food) {
+            //append  preparation_name
             $preparation = Preparation::where('code', $food->preparation_code)->first();
             $food->setAttribute('preparation_name', $preparation->name);
+
+            $foods[$index] = $this->appendNutrients($food);
+
         }
 
         return $foods->toJson(JSON_PRETTY_PRINT);
@@ -55,10 +78,12 @@ class FoodController extends Controller
     public function show($code)
     {
         $food = Food::where('code', $code)->firstOrFail();
+        //append preparation_name
         $preparation = Preparation::where('code', $food->preparation_code)->first();
         $food->setAttribute('preparation_name', $preparation->name);
-        return $food->toJson(JSON_PRETTY_PRINT);
 
+        $food = $this->appendNutrients($food);
+        return $food->toJson(JSON_PRETTY_PRINT);
     }
 
     /**

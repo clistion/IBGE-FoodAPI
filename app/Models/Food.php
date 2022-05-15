@@ -14,11 +14,20 @@ class Food extends Model
 {
     use HasFactory;
     protected $table ="foods";
-    protected $visible = ['code', 'description','preparation_code','preparation_name'];//define quais attr serão retornadados
+    protected $visible = ['id','code', 'description','preparation_code','preparation_name', 'nutrients'];//define quais attr serão retornadados
     // protected $visible = ['code', 'description','preparation_code'];
     protected $appends = ['name'];
     // protected $appends = ['name','preparation_name'];
 
+    /**
+     * Get all of the nutrients for the Food
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+     public function nutrients():BelongsToMany
+     {
+         return $this->belongsToMany(Nutrient::class,'food_nutrient','food_id','nutrient_id');
+     }
 
     /**
      * Get the measurement associated with the Food
@@ -30,15 +39,6 @@ class Food extends Model
         return $this->hasOne(Measurement::class);
     }
 
-   /**
-    * Get all of the nutrients for the Food
-    *
-    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-    */
-    public function nutrients():BelongsToMany
-    {
-        return $this->belongsToMany(Nutrient::class);
-    }
 
     /**
      * Get the preparation associated with the Food

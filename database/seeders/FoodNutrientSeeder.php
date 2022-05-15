@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 
 use App\Models\FoodNutrient;
 use File;
+// use App\Models\Food;
 
 class FoodNutrientSeeder extends Seeder
 {
@@ -21,15 +22,32 @@ class FoodNutrientSeeder extends Seeder
         $nutrientsValues = json_decode($json);
 
         foreach ($nutrientsValues as $k => $value) {
+            $k++;
+
             foreach ($value as $j => $v) {
-                // print "$key => $valor\n";
+                // $food = Food::find($k);
+
+                // $food->nutrients()->create([
+                //     "food_id" => $k,
+                //     "nutrient_id" => $j,
+                //      "amount" => $v
+                // ]);
+
                 FoodNutrient::create([
-                    "foods_id" => $k,
-                    "nutrients_id" => $j,
+                    "food_id" => $k,
+                    "nutrient_id" => $j,
                     "amount" => $v
                 ]);
+
+                // if($k > 10){
+                //     break;
+                // }
+
+            // print_r($k);
+            // print_r($j);
+            // print_r($v);
+
             }
-            $k++;
         }
     }
 }
