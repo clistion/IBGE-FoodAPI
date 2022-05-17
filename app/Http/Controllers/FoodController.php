@@ -12,6 +12,7 @@ use App\Models\FoodNutrient;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Arr;
 use PHPUnit\Framework\MockObject\Stub\ReturnValueMap;
+use App\Models\Category;
 
 class FoodController extends Controller
 {
@@ -49,6 +50,7 @@ class FoodController extends Controller
             //append  preparation_name
             $preparation = Preparation::where('code', $food->preparation_code)->first();
             $food->setAttribute('preparation_name', $preparation->name);
+            $food->setAttribute('category', Category::find($food->category_id));
 
             $foods[$index] = $this->appendNutrients($food);
 
@@ -81,6 +83,8 @@ class FoodController extends Controller
         //append preparation_name
         $preparation = Preparation::where('code', $food->preparation_code)->first();
         $food->setAttribute('preparation_name', $preparation->name);
+
+        $food->setAttribute('category', Category::find($food->category_id));
 
         $food = $this->appendNutrients($food);
         return $food->toJson(JSON_PRETTY_PRINT);

@@ -14,7 +14,7 @@ class Food extends Model
 {
     use HasFactory;
     protected $table ="foods";
-    protected $visible = ['id','code', 'description','preparation_code','preparation_name', 'nutrients'];//define quais attr serão retornadados
+    protected $visible = ['id','code', 'description','preparation_code','preparation_name','category', 'nutrients'];//define quais attr serão retornadados
     // protected $visible = ['code', 'description','preparation_code'];
     protected $appends = ['name'];
     // protected $appends = ['name','preparation_name'];

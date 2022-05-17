@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Category extends Model
 {
     use HasFactory;
-
+    protected $visible = ['id', 'name'];
     /**
      * Get the user that owns the Category
      *
