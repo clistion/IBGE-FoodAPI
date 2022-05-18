@@ -13,12 +13,20 @@ API of the 2008-2009 Family Budget Survey: tables of nutritional composition of 
  | /food/{code}| GET | Fetches details for one food item by code
  
  
-# 1- Running this project
- - configure the .env file
+# 1- Deployment
+ - [prepare your deployment environment ](https://laravel.com/docs/9.x/deployment)
 
 # 2 - Execute these commands in powershell / CMD / Terminal:
+ - git clone https://github.com/clistion/IBGE-FoodAPI.git
+ - cd IBGE-FoodAPI/
+ - [mv .env.example .env](https://laravel.com/docs/9.x/configuration#environment-configuration)
+ - [composer install](https://getcomposer.org/download/)
  - [composer update](https://getcomposer.org/download/)
  - [php artisan migrate](https://laravel.com/docs/9.x/migrations#roll-back-migrate-using-a-single-command)
  - [php artisan db:seed](https://laravel.com/docs/9.x/seeding#main-content)
  - php artisan serve
+
+# Demo
+ - http://132.226.248.2/api/foods?paginate=5
+ - http://132.226.248.2/api/food/6300101
 
