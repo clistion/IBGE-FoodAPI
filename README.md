@@ -14,7 +14,7 @@ API of the 2008-2009 Family Budget Survey: tables of nutritional composition of 
  
  
 # 1- Deployment
- - [prepare your deployment environment ](https://laravel.com/docs/9.x/deployment)
+ - [prepare your deployment environment ](https://laravel.com/docs/10.x/deployment)
 
 # 2 - Execute these commands in powershell / CMD / Terminal:
  - git clone https://github.com/clistion/IBGE-FoodAPI.git
