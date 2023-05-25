@@ -19,7 +19,8 @@ API of the 2008-2009 Family Budget Survey: tables of nutritional composition of 
 # 2 - Execute these commands in powershell / CMD / Terminal:
  - git clone https://github.com/clistion/IBGE-FoodAPI.git
  - cd IBGE-FoodAPI/
- - [mv .env.example .env](https://laravel.com/docs/9.x/configuration#environment-configuration)
+ - [mv .env.example .env](https://laravel.com/docs/10.x/configuration#environment-configuration)
+ - php artisan key:generate
  - [composer install](https://getcomposer.org/download/)
  - [composer update](https://getcomposer.org/download/)
  - [php artisan migrate](https://laravel.com/docs/9.x/migrations#roll-back-migrate-using-a-single-command)
