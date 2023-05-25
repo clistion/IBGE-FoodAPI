@@ -10,7 +10,7 @@ class Nutrient extends Model
 {
     use HasFactory;
     protected $table ="nutrients";//force use this table name. fix plural probles!
-    protected $visible = ['name', 'simbol','id'];//define which attributes are returned
+    protected $visible = ['name', 'symbol','id'];//define which attributes are returned
 
 
    /**

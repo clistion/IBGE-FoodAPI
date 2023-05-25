@@ -25,7 +25,7 @@ class NutrientSeeder extends Seeder
        foreach ($nutrients as $key => $value) {
            Nutrient::create([
                "name" => $value->name,
-               "simbol" => $value->simbol
+               "symbol" => $value->symbol
            ]);
        }
     }
