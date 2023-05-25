@@ -23,9 +23,10 @@ API of the 2008-2009 Family Budget Survey: tables of nutritional composition of 
  - php artisan key:generate
  - [composer install](https://getcomposer.org/download/)
  - [composer update](https://getcomposer.org/download/)
- - [php artisan migrate](https://laravel.com/docs/9.x/migrations#roll-back-migrate-using-a-single-command)
- - [php artisan db:seed](https://laravel.com/docs/9.x/seeding#main-content)
+ - [php artisan migrate](https://laravel.com/docs/10.x/migrations#roll-back-migrate-using-a-single-command)
+ - [php artisan db:seed](https://laravel.com/docs/10.x/seeding#main-content)
  - php artisan serve
+   http://localhost:8000/api
 
 # Demo
  - http://132.226.248.2/api/foods?paginate=5
