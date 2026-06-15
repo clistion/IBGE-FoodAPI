@@ -29,6 +29,6 @@ API of the 2008-2009 Family Budget Survey: tables of nutritional composition of 
    http://localhost:8000/api
 
 # Demo
- - http://132.226.248.2/api/foods?paginate=5
- - http://132.226.248.2/api/food/6300101
+ - http://ibgefoodapi.task-it.app/api/foods?paginate=5
+ - http://ibgefoodapi.task-it.app/api/food/6300101
 
